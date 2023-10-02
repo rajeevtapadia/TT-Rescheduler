@@ -5,6 +5,7 @@ import { checkAdmin, checkProf } from "../Controllers/authMiddleware.js";
 import * as prof_control from "../Controllers/faculty.js";
 import * as api from "../Controllers/api.js";
 import { getRequestSlot, postRequestSlot } from "../Controllers/slot.js";
+import testing from "../Controllers/test.js";
 
 const router = express.Router();
 
@@ -45,4 +46,5 @@ router.get("/api/get/faculty/:id", api.getFacultyById);
 router.get("/faculty/request-slot", checkProf, getRequestSlot);
 router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
+router.get('/test/:id', testing);
 export default router;
